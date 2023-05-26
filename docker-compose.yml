@@ -25,9 +25,9 @@ services:
     env_file:
       - .env
     environment:
-      INGRESS_HOSTNAME: ${FANTOM_HOSTNAME:-fantom.doublesharp.com}
-      SSL_CERT: ${FANTOM_HOSTNAME:-fantom.doublesharp.com}-fullchain.pem
-      SSL_KEY: ${FANTOM_HOSTNAME:-fantom.doublesharp.com}-privkey.pem
+      INGRESS_HOSTNAME: ${FANTOM_HOSTNAME:-fantom.namename.com}
+      SSL_CERT: ${FANTOM_HOSTNAME:-fantom.namename.com}-fullchain.pem
+      SSL_KEY: ${FANTOM_HOSTNAME:-fantom.namename.com}-privkey.pem
       FANTOM_HOST: ${FANTOM_HOST:-fantom}
 
   letsencrypt:
@@ -41,14 +41,14 @@ services:
     env_file:
       - .env
     environment:
-      DOMAIN: ${FANTOM_HOSTNAME:-fantom.doublesharp.com}
+      DOMAIN: ${FANTOM_HOSTNAME:-fantom.namename.com}
       SSL_PATH: ${SSL_PATH:-/etc/nginx/ssl}
       CLOUDFLARE_EMAIL: ${CLOUDFLARE_EMAIL}
       CLOUDFLARE_API_KEY: ${CLOUDFLARE_API_KEY}
 
   fantom:
     image: 'opera'
-    # image: doublesharp/fantom-opera:latest
+    # image: namename/fantom-opera:latest
     build:
       context: opera
     restart: always
@@ -65,7 +65,7 @@ services:
     env_file:
       - .env
     environment:
-      FANTOM_HOSTNAME: ${FANTOM_HOSTNAME:-fantom.doublesharp.com}
+      FANTOM_HOSTNAME: ${FANTOM_HOSTNAME:-fantom.namename.com}
       FANTOM_VERBOSITY: ${FANTOM_VERBOSITY:-3}
 
 volumes:

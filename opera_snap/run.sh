@@ -5,7 +5,8 @@ echo "starting fantom opera"
 
 set -e
 
-opera \
+cd
+nohup opera \
   --http \
   --http.addr "0.0.0.0" \
   --http.api "${FANTOM_API}" \
@@ -15,4 +16,6 @@ opera \
   --verbosity "${FANTOM_VERBOSITY}" \
   --cache "${FANTOM_CACHE}" \
   --genesis "/genesis/${FANTOM_GENESIS}"
-  --syncmode snap
+  --syncmode snap \
+  --db.preset "${FANTOM_DB_PRESET}" \
+  --maxpeers "${FANTOM_MAX_PEERS}" &

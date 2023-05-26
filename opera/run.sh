@@ -5,13 +5,12 @@ echo "starting fantom opera"
 
 set -e
 
-opera \
-  --http \
-  --http.addr "0.0.0.0" \
-  --http.api "${FANTOM_API}" \
-  --http.corsdomain "*" \
-  --http.vhosts "${FANTOM_HOSTNAME}" \
+cd
+nohup opera \
   --nousb \
   --verbosity "${FANTOM_VERBOSITY}" \
   --cache "${FANTOM_CACHE}" \
-  --genesis "/genesis/${FANTOM_GENESIS}"
+  --genesis "/genesis/${FANTOM_GENESIS}" \
+  --db.preset "${FANTOM_DB_PRESET}" \
+  --maxpeers "${FANTOM_MAX_PEERS}" &
+
