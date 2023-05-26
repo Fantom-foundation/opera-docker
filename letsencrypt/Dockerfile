@@ -1,9 +1,10 @@
-FROM alpine:3.13
+FROM alpine:3.17
 
 RUN set -xe; \
   # install dependencies
+  # bash busybox-initscripts busybox-suid py3-pip; \
   apk add --no-cache \
-  bash busybox-initscripts busybox-suid py3-pip; \
+  bash busybox-openrc busybox-suid py3-pip; \
   # install build dependencies
   apk add --no-cache --virtual .build-deps \
   gcc linux-headers libffi-dev musl-dev rust cargo openssl-dev python3-dev; \
