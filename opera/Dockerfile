@@ -1,7 +1,7 @@
 FROM golang:1.19.3-alpine as build-stage
 
 ARG FANTOM_NETWORK=opera
-ARG GITHUB_BRANCH=release/1.1.2-rc.5
+ARG GITHUB_BRANCH=release/1.1.2-rc.6
 ARG GITHUB_URL=https://github.com/Fantom-foundation/go-${FANTOM_NETWORK}.git
 ARG GITHUB_DIR=go-${FANTOM_NETWORK}
 
