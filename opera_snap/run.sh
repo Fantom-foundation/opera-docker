@@ -15,7 +15,7 @@ nohup opera \
   --nousb \
   --verbosity "${FANTOM_VERBOSITY}" \
   --cache "${FANTOM_CACHE}" \
-  --genesis "/genesis/${FANTOM_GENESIS}"
+  --genesis "/genesis/${FANTOM_GENESIS}" \
   --syncmode snap \
   --db.preset "${FANTOM_DB_PRESET}" \
   --maxpeers "${FANTOM_MAX_PEERS}" &
