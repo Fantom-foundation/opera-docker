@@ -6,11 +6,11 @@ echo "starting fantom opera"
 set -e
 
 cd
-nohup opera \
+opera \
   --nousb \
   --verbosity "${FANTOM_VERBOSITY}" \
   --cache "${FANTOM_CACHE}" \
   --genesis "/genesis/${FANTOM_GENESIS}" \
   --db.preset "${FANTOM_DB_PRESET}" \
-  --maxpeers "${FANTOM_MAX_PEERS}" &
+  --maxpeers "${FANTOM_MAX_PEERS}"
 
